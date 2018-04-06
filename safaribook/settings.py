@@ -20,6 +20,8 @@ NEWSPIDER_MODULE = 'safaribook.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
+REDIRECT_MAX_TIMES = 333
+DUPEFILTER_DEBUG = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -64,9 +66,9 @@ DOWNLOAD_DELAY = 0.25
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'safaribook.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'safaribook.pipelines.SafaribookPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

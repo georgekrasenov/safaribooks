@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if ! [[ $3 =~ [0-9]+ ]]; then
-    echo "Please give a pure digit book id, $3 is not an acceptable book id."
+if ! [[ $4 =~ [0-9]+ ]]; then
+    echo "Please give a pure digit book id, $4 is not an acceptable book id."
     exit -1
 fi
 
-scrapy crawl SafariBooks -a user=$1 -a password=$2 -a bookid=$3
+scrapy crawl SafariBooks -a user=$1 -a password=$2 -a token=$3 -a bookid=$4
 kindlegen *.epub
